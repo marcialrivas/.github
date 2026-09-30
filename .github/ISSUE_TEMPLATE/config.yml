@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Preguntas y propuestas abiertas
+    url: https://github.com/marcialrivas/agentic-platform/discussions
+    about: Usa Discussions para ideas que todavía no son trabajo concreto.

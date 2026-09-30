@@ -1,0 +1,44 @@
+name: Épica
+description: Oportunidad o feature grande que contribuye al Product Goal y se descompone en historias.
+title: "[Épica] "
+labels: ["epic"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Una épica agrupa historias que persiguen un mismo resultado. `po-story-writer` puede descomponerla en historias cuando se le agrega la etiqueta `needs-stories`.
+  - type: input
+    id: product-goal
+    attributes:
+      label: Product Goal al que contribuye
+      description: Copia o enlaza el Product Goal vigente (descripción del Project).
+    validations:
+      required: true
+  - type: textarea
+    id: hipotesis
+    attributes:
+      label: Hipótesis
+      description: "Creemos que [capacidad] para [usuario] logrará [resultado]. Sabremos que es cierto cuando [métrica]."
+    validations:
+      required: true
+  - type: input
+    id: metrica
+    attributes:
+      label: Métrica de éxito
+      placeholder: "Ej.: 30 % de los usuarios activos usa la función en el primer mes"
+    validations:
+      required: true
+  - type: textarea
+    id: alcance
+    attributes:
+      label: Alcance
+      description: Qué incluye y, sobre todo, qué no incluye.
+  - type: textarea
+    id: riesgos
+    attributes:
+      label: Riesgos y supuestos
+  - type: dropdown
+    id: talla
+    attributes:
+      label: Estimación preliminar (talla)
+      options: ["XS", "S", "M", "L", "XL"]

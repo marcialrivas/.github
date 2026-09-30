@@ -1,0 +1,50 @@
+name: Tarea técnica
+description: Trabajo técnico que forma parte de una historia (sub-issue), asignable a una persona o a un agente.
+title: "[Tarea] "
+labels: ["task"]
+body:
+  - type: input
+    id: historia
+    attributes:
+      label: Historia
+      description: "Número de la historia padre (#123)."
+    validations:
+      required: true
+  - type: dropdown
+    id: disciplina
+    attributes:
+      label: Disciplina
+      options: ["Producto", "UX", "FE", "BE", "Datos", "QA", "DevOps", "Plataforma", "Gobierno"]
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Qué hay que hacer
+    validations:
+      required: true
+  - type: textarea
+    id: terminado
+    attributes:
+      label: Criterio de terminado
+      description: Evidencia concreta que demuestra que la tarea está completa.
+    validations:
+      required: true
+  - type: dropdown
+    id: ejecutor
+    attributes:
+      label: Ejecutor
+      options: ["Humano", "Agente", "Pareja humano+agente"]
+    validations:
+      required: true
+  - type: input
+    id: agente
+    attributes:
+      label: Agente (si aplica)
+      placeholder: "backend-implementer"
+  - type: dropdown
+    id: nivel
+    attributes:
+      label: Nivel de delegación
+      description: En el piloto, todo lo que toca código es como máximo N2 (sección 14.3).
+      options: ["N0 – Solo humano", "N1 – Agente asiste", "N2 – Agente ejecuta, persona revisa", "N3 – Agente autónomo con registro"]

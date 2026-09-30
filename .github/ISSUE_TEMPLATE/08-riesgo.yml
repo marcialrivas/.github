@@ -1,0 +1,51 @@
+name: Riesgo
+description: Alta de un riesgo nuevo para el registro de riesgos (sección 20 del README).
+title: "[Riesgo] "
+labels: ["risk"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        El Scrum Master incorpora el riesgo a la tabla 20.3 del README por PR y le asigna un ID (R41, R42…). Las acciones de mitigación se abren como Issues con la etiqueta `risk-action`.
+  - type: textarea
+    id: riesgo
+    attributes:
+      label: Riesgo
+      description: "Qué podría pasar y qué consecuencia tendría. Formato sugerido: \"Si [causa], entonces [efecto]\"."
+    validations:
+      required: true
+  - type: dropdown
+    id: categoria
+    attributes:
+      label: Categoría
+      options: ["Técnico", "Seguridad", "Proceso", "Personas", "Negocio", "Proveedor", "Legal", "Plan"]
+    validations:
+      required: true
+  - type: dropdown
+    id: probabilidad
+    attributes:
+      label: Probabilidad
+      options: ["1 – Baja", "2 – Media", "3 – Alta"]
+    validations:
+      required: true
+  - type: dropdown
+    id: impacto
+    attributes:
+      label: Impacto
+      options: ["1 – Bajo", "2 – Medio", "3 – Alto"]
+    validations:
+      required: true
+  - type: input
+    id: dueno
+    attributes:
+      label: Dueño propuesto (rol)
+      placeholder: "TL, SM, PO, DevOps, Plataforma, Patrocinador…"
+  - type: textarea
+    id: mitigacion
+    attributes:
+      label: Mitigación propuesta
+  - type: textarea
+    id: indicador
+    attributes:
+      label: Indicador de alerta
+      description: Señal observable que avisa que el riesgo se está materializando.

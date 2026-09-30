@@ -1,0 +1,44 @@
+name: Mejora de agente o skill
+description: Propuesta de cambio a un agente, skill, hook o permiso del repositorio de plataforma.
+title: "[Agente/Skill] "
+labels: ["agent-improvement"]
+body:
+  - type: input
+    id: componente
+    attributes:
+      label: Agente o skill
+      placeholder: "code-reviewer / skill test-driven-development"
+    validations:
+      required: true
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema observado
+      description: Qué hizo mal o qué falta. Enlaza los PRs o Issues donde se observó.
+    validations:
+      required: true
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Cambio propuesto
+    validations:
+      required: true
+  - type: textarea
+    id: metrica
+    attributes:
+      label: Métrica que debería mejorar
+      description: "Ej.: tasa de aceptación de PRs, iteraciones de revisión, tasa de aprobación en evals."
+    validations:
+      required: true
+  - type: checkboxes
+    id: evals
+    attributes:
+      label: Evals
+      options:
+        - label: El cambio incluye casos nuevos o actualizados en `evals/`
+        - label: La tasa de aprobación en evals no baja respecto a la versión anterior
+  - type: dropdown
+    id: origen
+    attributes:
+      label: Origen
+      options: ["Retrospectiva", "agent-performance-analyst", "Uso diario", "Incidente"]

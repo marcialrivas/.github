@@ -1,0 +1,66 @@
+name: Historia de usuario
+description: Incremento de valor para una persona usuaria, con criterios de aceptación en Gherkin.
+title: "[Historia] "
+labels: ["story"]
+body:
+  - type: input
+    id: epica
+    attributes:
+      label: Épica
+      description: "Enlace o número de la épica (#123). La historia se agrega como sub-issue."
+    validations:
+      required: true
+  - type: textarea
+    id: historia
+    attributes:
+      label: Historia
+      value: |
+        Como [tipo de usuario]
+        quiero [capacidad]
+        para [beneficio]
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación (Gherkin)
+      description: Al aprobarse en refinamiento, estos escenarios pasan a `docs/tests/features/` como `.feature` ejecutable.
+      render: gherkin
+      value: |
+        Escenario: [nombre]
+          Dado [contexto]
+          Cuando [acción]
+          Entonces [resultado esperado]
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto enlazado
+      description: ADR aplicables, versión del diseño en Penpot, especificaciones vivas relacionadas.
+  - type: textarea
+    id: notas-tecnicas
+    attributes:
+      label: Notas técnicas y riesgos (Tech Lead)
+  - type: dropdown
+    id: ejecutor
+    attributes:
+      label: Ejecutor propuesto
+      description: Se confirma en Sprint Planning según la política de delegación (N0 a N3).
+      options: ["Humano", "Agente", "Pareja humano+agente", "Por definir"]
+  - type: checkboxes
+    id: dor
+    attributes:
+      label: Definition of Ready (mínima del piloto)
+      description: "6 obligatorios; los 'si aplica' se marcan cuando no aplican. La revisa la skill definition-of-ready y la valida dor-dod-gatekeeper al mover la historia a Ready (README 13.3)."
+      options:
+        - label: Historia bien formada (Como / quiero / para) y pequeña, validada por el PO
+        - label: Criterios de aceptación en Gherkin (son los casos de prueba)
+        - label: Estimada por el equipo
+        - label: Dependencias identificadas y sin bloqueos
+        - label: Ejecutor definido (Humano, Agente o Pareja)
+        - label: Vinculada a su épica
+        - label: "Si aplica: diseño UX enlazado y aprobado"
+        - label: "Si aplica: notas técnicas o ADR"
+        - label: "Si aplica: impacto de datos evaluado por DBA"
+        - label: "Si aplica: contexto enlazado (ADR, diseño, especificaciones vivas)"
