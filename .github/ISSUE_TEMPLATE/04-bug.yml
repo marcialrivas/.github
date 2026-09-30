@@ -1,0 +1,51 @@
+name: Bug
+description: Defecto reproducible. Formato de la skill `bug-report-standards`.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducir
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: obtenido
+    attributes:
+      label: Resultado obtenido
+    validations:
+      required: true
+  - type: dropdown
+    id: entorno
+    attributes:
+      label: Entorno
+      options: ["dev", "staging", "producción"]
+    validations:
+      required: true
+  - type: dropdown
+    id: severidad
+    attributes:
+      label: Severidad propuesta
+      description: La severidad final la decide QA funcional.
+      options: ["Crítica", "Alta", "Media", "Baja"]
+    validations:
+      required: true
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidencia
+      description: Capturas, logs, trazas o enlace a la ejecución. Sin datos personales reales (sección 14.4).
+  - type: input
+    id: historia
+    attributes:
+      label: Historia o feature relacionada

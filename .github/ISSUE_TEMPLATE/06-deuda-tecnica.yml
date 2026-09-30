@@ -1,0 +1,32 @@
+name: Deuda técnica
+description: Atajo o problema de diseño que encarece el trabajo futuro. Lo inventaría `tech-debt-tracker`.
+title: "[Deuda] "
+labels: ["tech-debt"]
+body:
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción
+      description: Qué atajo se tomó o qué problema existe, y dónde (componente, archivos).
+    validations:
+      required: true
+  - type: textarea
+    id: costo
+    attributes:
+      label: Costo de no resolverla
+      description: Cómo frena al equipo hoy (retrabajo, incidentes, tiempo extra por historia).
+    validations:
+      required: true
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Propuesta de solución
+  - type: dropdown
+    id: origen
+    attributes:
+      label: Origen
+      options: ["Decisión consciente", "Código generado por agente", "Cambio de requisitos", "Desconocido"]
+  - type: input
+    id: adr
+    attributes:
+      label: ADR relacionado (si aplica)
