@@ -2,7 +2,8 @@
 
 <!-- Qué cambia y por qué, en 2 o 3 líneas. -->
 
-Cierra #
+<!-- Refs, no Closes: la historia se cierra a mano con un comentario "Verificado:" después de verificarla en el entorno real (agentic-platform#174). -->
+Refs #
 
 ## Tipo de cambio
 
@@ -43,6 +44,7 @@ Cierra #
 - [ ] Sin hallazgos de seguridad críticos o altos abiertos
 - [ ] Documentación actualizada en este PR con frontmatter válido, o declaración de que no hay impacto: ⟨motivo⟩
 - [ ] Si aplica: accesibilidad (UI), pruebas E2E o de API, migraciones reversibles
+- [ ] Después del merge: verificación en el entorno real y comentario "Verificado:" con la evidencia en la historia (es lo que la cierra)
 
 ## Revisión humana
 
